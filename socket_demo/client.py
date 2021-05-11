@@ -10,8 +10,8 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # 获取本地主机名
 # host = socket.gethostname()
-host = "192.168.31.148"
-
+# host = "192.168.31.148"
+host = "192.168.172.232"
 # 设置端口号
 port = 9999
 

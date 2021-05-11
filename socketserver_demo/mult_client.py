@@ -6,7 +6,8 @@ flag = True
 client = socket.socket()
 
 # 链接要链接的ip和port（端口）
-client.connect(('localhost', 9999))
+host = "192.168.172.232"
+client.connect((host, 9999))
 
 # while循环
 while flag:

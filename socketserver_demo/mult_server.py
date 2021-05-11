@@ -25,7 +25,7 @@ class MySelfServer(socketserver.BaseRequestHandler):  # 第一步创建一个自
 
 
 if __name__ == "__main__":
-    HOST, PORT = "localhost", 9999
+    HOST, PORT = "", 9999
 
     # 第二步实例化四个类其中之一并传入服务器地址和上面自己创建的服务器类，这里自己实例化的TCPServer
     server = socketserver.TCPServer((HOST, PORT), MySelfServer)
