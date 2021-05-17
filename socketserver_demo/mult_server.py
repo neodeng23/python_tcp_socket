@@ -28,7 +28,7 @@ if __name__ == "__main__":
     HOST, PORT = "", 9999
 
     # 第二步实例化四个类其中之一并传入服务器地址和上面自己创建的服务器类，这里自己实例化的TCPServer
-    server = socketserver.TCPServer((HOST, PORT), MySelfServer)
+    server = socketserver.ThreadingTCPServer((HOST, PORT), MySelfServer)
 
     # 处理多个请求，这里注意的是虽然是处理多个请求，但是这句话并没有实现并发
     server.serve_forever()
