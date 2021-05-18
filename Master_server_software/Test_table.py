@@ -33,7 +33,7 @@ class MyTable(QTableWidget):
     def update_item_data(self, data):
         """
         实时向UI界面表格中更新数据，新增一行
-        更新内容 data = [res, Step, TestGroup, TestName, CMD, LowLimit, value, UpLimit, Unit, duration]
+        更新内容 data = ["Time", "DUT", "Process", "CMD", "PLC"]
         """
         num = self.rowCount()
         self.insertRow(num)
@@ -52,7 +52,7 @@ class MyTable(QTableWidget):
     def update_item_data_without_add_new_line(self, data):
         """
         实时像UI界面表格中更新数据，更新在当前的最后一行，不新增行
-        更新内容 data = [res, Step, TestGroup, TestName, CMD, LowLimit, value, UpLimit, Unit, duration]
+        更新内容 data = ["Time", "DUT", "Process", "CMD", "PLC"]
         """
         num = self.rowCount()
         for line_num in range(0, len(data)):
