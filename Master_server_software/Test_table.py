@@ -39,7 +39,7 @@ class MyTable(QTableWidget):
         self.insertRow(num)
         for line_num in range(0, len(data)):
             self.setItem(num, line_num, QTableWidgetItem(data[line_num]))  # 设置表格内容(行， 列) 文字
-        self.change_res_color(data[0], num)
+        # self.change_res_color(data[0], num)
 
     def change_res_color(self, res, num):
         if res == "pass" or res == "All_Pass!!!!":
