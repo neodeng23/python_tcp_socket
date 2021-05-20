@@ -9,6 +9,11 @@ import os
 import sys
 
 
+'''
+    PYQT表格的ui
+'''
+
+
 class MyTable(QTableWidget):
     def __init__(self, parent=None):
         super(MyTable, self).__init__(parent)
