@@ -42,7 +42,7 @@ class MyMainForm(QMainWindow, Ui_MainWindow):
 
 
 class Update_data(QThread):
-    """更新数据类"""
+    """新增线程"""
     sinOut = pyqtSignal(list)
 
     def __init__(self, parent=None):
