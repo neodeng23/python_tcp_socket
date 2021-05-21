@@ -23,5 +23,5 @@ def SendAndRev(msg, host, port):
 
 
 msg = "aaaa"
-data = SendAndRev(msg, "192.168.231.232", 9999)
+data = SendAndRev(msg, "127.0.0.1", 9999)
 print(data)

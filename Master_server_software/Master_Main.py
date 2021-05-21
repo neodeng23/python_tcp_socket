@@ -8,6 +8,7 @@ from PyQt5.QtCore import Qt
 import socketserver
 import socket
 import time
+from datetime import datetime
 import sys
 
 pe_red = QPalette()
@@ -82,6 +83,7 @@ class MySelfServer(socketserver.BaseRequestHandler):  # 第一步创建一个自
                 print(rev_data)
                 if rev_data == "":
                     rev_data = "connection finish"
+                test_start_time = datetime.now()
                 log_data = [now_time, self.client_address[0], "connect", rev_data, "PLC1"]
                 # ["Time", "DUT", "Process", "CMD", "PLC"]
                 MyMainForm.log_Add(mainWindow, log_data)
@@ -95,7 +97,11 @@ class MySelfServer(socketserver.BaseRequestHandler):  # 第一步创建一个自
                     self.request.close()
                     break
                 else:
+                    time.sleep(60)
+                    test_time_elapsed = datetime.now() - test_start_time
+                    total_time = format(test_time_elapsed)[:-2]
                     self.request.sendall(self.data.upper())  # 将接收到的数据大写发送回去
+                    print(total_time)
 
             except Exception as e:
                 self.server.shutdown()
